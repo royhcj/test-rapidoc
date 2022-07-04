@@ -1,0 +1,29 @@
+type: object
+x-examples:
+  example-1:
+    primary_color: string
+    home_background_middle_color: string
+    home_background_bottom_color: string
+    home_background_top_color: string
+    home_title_logo:
+      icon_name: string
+      image_url: string
+properties:
+  primary_color:
+    type: string
+  home_background_middle_color:
+    type: string
+  home_background_bottom_color:
+    type: string
+  home_background_top_color:
+    type: string
+  home_title_logo:
+    $ref: ./ImageResource.yaml
+examples:
+  - primary_color: string
+    home_background_middle_color: string
+    home_background_bottom_color: string
+    home_background_top_color: string
+    home_title_logo:
+      icon_name: string
+      image_url: 'https://sample.com/image.jpg'

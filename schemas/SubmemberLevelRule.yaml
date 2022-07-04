@@ -1,0 +1,61 @@
+type: object
+x-examples:
+  example-1:
+    criteria_description: string
+    level_benefits:
+      - id: string
+        title: string
+        benefit_icon:
+          icon_name: string
+          image_url: string
+        short_description: string
+        issuer_bg_code: string
+    criteria_short_description: string
+    membercard_image:
+      icon_name: string
+      image_url: string
+    level_title: string
+    membercard_background:
+      icon_name: string
+      image_url: string
+    level_number: 0
+    consumption_criteria: 0
+examples:
+  - criteria_description: string
+    level_benefits:
+      - id: '5'
+        title: string
+        benefit_icon:
+          icon_name: string
+          image_url: string
+        short_description: string
+        issuer_bg_code: noke
+    criteria_short_description: string
+    membercard_image:
+      icon_name: string
+      image_url: string
+    level_title: string
+    membercard_background:
+      icon_name: string
+      image_url: string
+    level_number: 0
+    consumption_criteria: 0
+properties:
+  criteria_description:
+    type: string
+  level_benefits:
+    type: array
+    items:
+      $ref: ./Benefit.yaml
+  criteria_short_description:
+    type: string
+  membercard_image:
+    $ref: ./ImageResource.yaml
+  level_title:
+    type: string
+  membercard_background:
+    $ref: ./ImageResource.yaml
+  level_number:
+    type: integer
+  consumption_criteria:
+    type: integer

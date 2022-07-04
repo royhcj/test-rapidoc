@@ -1,0 +1,29 @@
+type: object
+x-examples:
+  example-1:
+    id: string
+    title: string
+    benefit_icon:
+      icon_name: string
+      image_url: string
+    short_description: string
+    issuer_bg_code: string
+examples:
+  - id: '5'
+    title: string
+    benefit_icon:
+      icon_name: string
+      image_url: string
+    short_description: string
+    issuer_bg_code: noke
+properties:
+  id:
+    type: string
+  title:
+    type: string
+  benefit_icon:
+    $ref: ./ImageResource.yaml
+  short_description:
+    type: string
+  issuer_bg_code:
+    type: string

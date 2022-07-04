@@ -1,0 +1,34 @@
+type: object
+x-examples:
+  example-1:
+    home_article_categories:
+      - id: string
+        title: string
+    features:
+      - feature_type: string
+        feature_name: string
+        icon:
+          icon_name: string
+          image_url: string
+examples:
+  - home_article_categories:
+      - id: string
+        title: string
+    features:
+      - feature_type: string
+        feature_name: string
+        icon:
+          icon_name: string
+          image_url: string
+properties:
+  home_article_categories:
+    type: array
+    items:
+      $ref: ./ArticleCategory.yaml
+  features:
+    type: array
+    items:
+      $ref: ./AppFeature.yaml
+required:
+  - home_article_categories
+  - features

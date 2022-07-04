@@ -1,0 +1,15 @@
+type: object
+x-examples:
+  example-1:
+    icon_name: string
+    image_url: string
+properties:
+  icon_name:
+    type: string
+  image_url:
+    type: string
+required:
+  - image_url
+examples:
+  - icon_name: icon_app_calendar
+    image_url: 'https://sample.com/image.jpg'

@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  title: open-api-doc
+  version: '1.0'
+  description: JUT mock api
+  contact:
+    name: roy
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /v1/businesses:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - businesses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    code: OK
+                    message: Successful
+                    data:
+                      app_theme:
+                        primary_color: string
+                        home_background_middle_color: string
+                        home_background_bottom_color: string
+                        home_background_top_color: string
+                        home_title_logo:
+                          icon_name: string
+                          image_url: 'https://sample.com/image.jpg'
+                      bg_code: string
+                      submember_info:
+                        level_rules:
+                          - criteria_description: string
+                            level_benefits:
+                              - id: string
+                                title: string
+                                benefit_icon:
+                                  icon_name: string
+                                  image_url: string
+                                short_description: string
+                                issuer_bg_code: string
+                            criteria_short_description: string
+                            membercard_image:
+                              icon_name: string
+                              image_url: string
+                            level_title: string
+                            membercard_background:
+                              icon_name: string
+                              image_url: string
+                            level_number: 0
+                            consumption_criteria: 0
+                      name: string
+                      app_features:
+                        home_article_categories:
+                          - id: string
+                            title: string
+                        features:
+                          - feature_type: string
+                            feature_name: string
+                            icon:
+                              icon_name: string
+                              image_url: string
+                      social_media: {}
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      $ref: ./schemas/Business.yaml
+      operationId: get-v1-businesses
+      description: ▶︎ 取得事業群list
+components:
+  schemas: {}

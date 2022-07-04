@@ -1,0 +1,101 @@
+type: object
+x-examples:
+  example-1:
+    app_theme:
+      primary_color: string
+      home_background_middle_color: string
+      home_background_bottom_color: string
+      home_background_top_color: string
+      home_title_logo:
+        icon_name: string
+        image_url: string
+    bg_code: string
+    submember_info:
+      level_rules:
+        - criteria_description: string
+          level_benefits:
+            - id: string
+              title: string
+              benefit_icon:
+                icon_name: string
+                image_url: string
+              short_description: string
+              issuer_bg_code: string
+          criteria_short_description: string
+          membercard_image:
+            icon_name: string
+            image_url: string
+          level_title: string
+          membercard_background:
+            icon_name: string
+            image_url: string
+          level_number: 0
+          consumption_criteria: 0
+    name: string
+    app_features:
+      home_article_categories:
+        - id: string
+          title: string
+      features:
+        - feature_type: string
+          feature_name: string
+          icon:
+            icon_name: string
+            image_url: string
+    social_media: {}
+examples:
+  - app_theme:
+      primary_color: string
+      home_background_middle_color: string
+      home_background_bottom_color: string
+      home_background_top_color: string
+      home_title_logo:
+        icon_name: string
+        image_url: 'https://sample.com/image.jpg'
+    bg_code: string
+    submember_info:
+      level_rules:
+        - criteria_description: string
+          level_benefits:
+            - id: string
+              title: string
+              benefit_icon:
+                icon_name: string
+                image_url: string
+              short_description: string
+              issuer_bg_code: string
+          criteria_short_description: string
+          membercard_image:
+            icon_name: string
+            image_url: string
+          level_title: string
+          membercard_background:
+            icon_name: string
+            image_url: string
+          level_number: 0
+          consumption_criteria: 0
+    name: string
+    app_features:
+      home_article_categories:
+        - id: string
+          title: string
+      features:
+        - feature_type: string
+          feature_name: string
+          icon:
+            icon_name: string
+            image_url: string
+    social_media: {}
+properties:
+  app_theme:
+    $ref: ./AppTheme.yaml
+  bg_code:
+    type: string
+  submember_info:
+    $ref: ./SubmemberInfo.yaml
+  name:
+    type: string
+  app_features:
+    $ref: ./AppFeatures.yaml
+  social_media:
+    type: object

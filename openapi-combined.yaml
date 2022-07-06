@@ -79,6 +79,7 @@ paths:
                     type: string
                   data:
                     type: array
+                    description: 事業群資訊
                     items:
                       type: object
                       x-examples:
@@ -180,6 +181,14 @@ paths:
                               home_title_logo:
                                 icon_name: string
                                 image_url: string
+                          examples:
+                            - primary_color: string
+                              home_background_middle_color: string
+                              home_background_bottom_color: string
+                              home_background_top_color: string
+                              home_title_logo:
+                                icon_name: string
+                                image_url: https://sample.com/image.jpg
                           properties:
                             primary_color:
                               type: string
@@ -191,14 +200,8 @@ paths:
                               type: string
                             home_title_logo:
                               $ref: "#/components/schemas/AppFeature/properties/icon"
-                          examples:
-                            - primary_color: string
-                              home_background_middle_color: string
-                              home_background_bottom_color: string
-                              home_background_top_color: string
-                              home_title_logo:
-                                icon_name: string
-                                image_url: https://sample.com/image.jpg
+                          required:
+                            - home_title_logo
                         bg_code:
                           type: string
                         submember_info:
@@ -658,11 +661,20 @@ components:
           icon:
             icon_name: string
             image_url: string
+      examples:
+        - feature_type: noke_parking
+          feature_name: 停車服務
+          icon:
+            icon_name: string
+            image_url: https://sample.com/image.jpg
+      description: App功能
       properties:
         feature_type:
           type: string
+          description: 功能enum
         feature_name:
           type: string
+          description: 功能名稱
         icon:
           type: object
           x-examples:
@@ -682,12 +694,7 @@ components:
       required:
         - feature_type
         - feature_name
-      examples:
-        - feature_type: string
-          feature_name: string
-          icon:
-            icon_name: string
-            image_url: https://sample.com/image.jpg
+        - icon
     AppFeatures:
       type: object
       x-examples:
@@ -742,22 +749,26 @@ components:
                 icon:
                   icon_name: string
                   image_url: string
+            examples:
+              - feature_type: noke_parking
+                feature_name: 停車服務
+                icon:
+                  icon_name: string
+                  image_url: https://sample.com/image.jpg
+            description: App功能
             properties:
               feature_type:
                 type: string
+                description: 功能enum
               feature_name:
                 type: string
+                description: 功能名稱
               icon:
                 $ref: "#/components/schemas/AppFeature/properties/icon"
             required:
               - feature_type
               - feature_name
-            examples:
-              - feature_type: string
-                feature_name: string
-                icon:
-                  icon_name: string
-                  image_url: https://sample.com/image.jpg
+              - icon
       required:
         - home_article_categories
         - features
@@ -772,6 +783,14 @@ components:
           home_title_logo:
             icon_name: string
             image_url: string
+      examples:
+        - primary_color: string
+          home_background_middle_color: string
+          home_background_bottom_color: string
+          home_background_top_color: string
+          home_title_logo:
+            icon_name: string
+            image_url: https://sample.com/image.jpg
       properties:
         primary_color:
           type: string
@@ -783,14 +802,8 @@ components:
           type: string
         home_title_logo:
           $ref: "#/components/schemas/AppFeature/properties/icon"
-      examples:
-        - primary_color: string
-          home_background_middle_color: string
-          home_background_bottom_color: string
-          home_background_top_color: string
-          home_title_logo:
-            icon_name: string
-            image_url: https://sample.com/image.jpg
+      required:
+        - home_title_logo
     ArticleCategory:
       type: object
       x-examples:

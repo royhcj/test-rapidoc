@@ -7,6 +7,11 @@ info:
     name: roy
 servers:
   - url: 'http://localhost:8080'
+tags:
+  - name: businesses
+    description: 事業群
+  - name: submembers
+    description: 子事業群會員
 paths:
   /v1/businesses:
     get:
@@ -76,7 +81,146 @@ paths:
                     type: array
                     items:
                       $ref: ./schemas/Business.yaml
+              examples:
+                example-1:
+                  value:
+                    code: string
+                    message: string
+                    data:
+                      - app_theme:
+                          primary_color: string
+                          home_background_middle_color: string
+                          home_background_bottom_color: string
+                          home_background_top_color: string
+                          home_title_logo:
+                            icon_name: string
+                            image_url: 'https://sample.com/image.jpg'
+                        bg_code: string
+                        submember_info:
+                          level_rules:
+                            - criteria_description: string
+                              level_benefits:
+                                - id: string
+                                  title: string
+                                  benefit_icon:
+                                    icon_name: string
+                                    image_url: string
+                                  short_description: string
+                                  issuer_bg_code: string
+                              criteria_short_description: string
+                              membercard_image:
+                                icon_name: string
+                                image_url: string
+                              level_title: string
+                              membercard_background:
+                                icon_name: string
+                                image_url: string
+                              level_number: 0
+                              consumption_criteria: 0
+                        name: string
+                        app_features:
+                          home_article_categories:
+                            - id: string
+                              title: string
+                          features:
+                            - feature_type: string
+                              feature_name: string
+                              icon:
+                                icon_name: string
+                                image_url: string
+                        social_media: {}
       operationId: get-v1-businesses
-      description: ▶︎ 取得事業群list
+      description: (+BG01) 取得「事業群」list
+  /v1/submembers:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - submembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-200:
+                    code: string
+                    message: string
+                    data:
+                      - id: '15'
+                        bg_code: noke
+                        business_name: NOKE 忠泰樂生活
+                        submember_card_number: NOK0012345
+                        accumulated_consumption: 1990
+                        level:
+                          level_number: 1
+                          level_title: 正式會員
+                          consumption_criteria: 50000
+                          next_level_number: 2
+                          next_level_title: VIP 會員
+                          next_level_consumption_criteria: 50000
+                          next_level_criteria_short_description: '累計 $50,000 升等VIP'
+                          membercard_background:
+                            icon_name: icon_app_calendar
+                            image_url: 'https://sample.com/image.jpg'
+                          benefits:
+                            - id: '5'
+                              title: 消費累積點數
+                              benefit_icon:
+                                icon_name: icon_name
+                                image_url: 'https://sample.com/image01.jpg'
+                              short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                              issuer_bg_code: noke
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      $ref: ./schemas/Submember.yaml
+              examples:
+                example-200:
+                  value:
+                    code: OK
+                    message: Successful
+                    data:
+                      - id: '15'
+                        bg_code: noke
+                        business_name: NOKE 忠泰樂生活
+                        submember_card_number: NOK0012345
+                        accumulated_consumption: 1990
+                        level:
+                          level_number: 1
+                          level_title: 正式會員
+                          consumption_criteria: 50000
+                          next_level_number: 2
+                          next_level_title: VIP 會員
+                          next_level_consumption_criteria: 50000
+                          next_level_criteria_short_description: '累計 $50,000 升等VIP'
+                          membercard_background:
+                            icon_name: icon_app_calendar
+                            image_url: 'https://sample.com/image.jpg'
+                          benefits:
+                            - id: '5'
+                              title: 消費累積點數
+                              benefit_icon:
+                                icon_name: icon_name
+                                image_url: 'https://sample.com/image01.jpg'
+                              short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                              issuer_bg_code: noke
+      operationId: get-v1-submembers-me
+      description: (SM01) 取得「子事業群會員」資訊
+      security:
+        - Authorization: []
+    parameters: []
 components:
   schemas: {}
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer
+security:
+  - Authorization: []

@@ -1,0 +1,61 @@
+type: object
+x-examples:
+  example-1:
+    level_number: 1
+    level_title: 正式會員
+    consumption_criteria: 50000
+    next_level_number: 2
+    next_level_title: VIP 會員
+    next_level_consumption_criteria: 50000
+    next_level_criteria_short_description: '累計 $50,000 升等VIP'
+    membercard_background:
+      image_url: string
+      icon_name: string
+    benefits:
+      - id: string
+        title: string
+        benefit_icon:
+          image_url: string
+          icon_name: string
+        short_description: string
+        issuer_bg_code: string
+examples:
+  - level_number: 1
+    level_title: 正式會員
+    consumption_criteria: 50000
+    next_level_number: 2
+    next_level_title: VIP 會員
+    next_level_consumption_criteria: 50000
+    next_level_criteria_short_description: '累計 $50,000 升等VIP'
+    membercard_background:
+      icon_name: icon_app_calendar
+      image_url: 'https://sample.com/image.jpg'
+    benefits:
+      - id: '5'
+        title: string
+        benefit_icon:
+          icon_name: string
+          image_url: string
+        short_description: string
+        issuer_bg_code: noke
+properties:
+  level_number:
+    type: integer
+  level_title:
+    type: string
+  consumption_criteria:
+    type: integer
+  next_level_number:
+    type: integer
+  next_level_title:
+    type: string
+  next_level_consumption_criteria:
+    type: integer
+  next_level_criteria_short_description:
+    type: string
+  membercard_background:
+    $ref: ./ImageResource.yaml
+  benefits:
+    type: array
+    items:
+      $ref: ./Benefit.yaml

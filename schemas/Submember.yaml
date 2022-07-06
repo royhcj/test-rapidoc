@@ -1,0 +1,64 @@
+type: object
+x-examples:
+  example-1:
+    id: string
+    bg_code: string
+    business_name: string
+    submember_card_number: string
+    accumulated_consumption: 0
+    level:
+      next_level_criteria_short_description: string
+      next_level_consumption_criteria: 0
+      benefits:
+        - id: string
+          title: string
+          benefit_icon:
+            icon_name: string
+            image_url: string
+          short_description: string
+          issuer_bg_code: string
+      next_level_number: 0
+      next_level_title: string
+      level_title: string
+      membercard_background:
+        icon_name: string
+        image_url: string
+      level_number: 0
+properties:
+  id:
+    type: string
+  bg_code:
+    type: string
+  business_name:
+    type: string
+  submember_card_number:
+    type: string
+  accumulated_consumption:
+    type: integer
+  level:
+    $ref: ./SubmemberLevel.yaml
+examples:
+  - id: '15'
+    bg_code: noke
+    business_name: NOKE 忠泰樂生活
+    submember_card_number: NOK0012345
+    accumulated_consumption: 1990
+    level:
+      level_number: 1
+      level_title: 正式會員
+      consumption_criteria: 50000
+      next_level_number: 2
+      next_level_title: VIP 會員
+      next_level_consumption_criteria: 50000
+      next_level_criteria_short_description: '累計 $50,000 升等VIP'
+      membercard_background:
+        icon_name: icon_app_calendar
+        image_url: 'https://sample.com/image.jpg'
+      benefits:
+        - id: '5'
+          title: 消費累積點數
+          benefit_icon:
+            icon_name: icon_name
+            image_url: 'https://sample.com/image01.jpg'
+          short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+          issuer_bg_code: noke

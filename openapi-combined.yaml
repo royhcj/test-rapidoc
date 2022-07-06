@@ -1,0 +1,846 @@
+openapi: 3.0.0
+info:
+  title: open-api-doc
+  version: "1.0"
+  description: JUT mock api
+  contact:
+    name: roy
+servers:
+  - url: http://127.0.0.1:8080
+tags:
+  - name: businesses
+    description: 事業群
+  - name: submembers
+    description: 子事業群會員
+paths:
+  /v1/businesses:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - businesses
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    code: OK
+                    message: Successful
+                    data:
+                      app_theme:
+                        primary_color: string
+                        home_background_middle_color: string
+                        home_background_bottom_color: string
+                        home_background_top_color: string
+                        home_title_logo:
+                          icon_name: string
+                          image_url: https://sample.com/image.jpg
+                      bg_code: string
+                      submember_info:
+                        level_rules:
+                          - criteria_description: string
+                            level_benefits:
+                              - id: string
+                                title: string
+                                benefit_icon:
+                                  icon_name: string
+                                  image_url: string
+                                short_description: string
+                                issuer_bg_code: string
+                            criteria_short_description: string
+                            membercard_image:
+                              icon_name: string
+                              image_url: string
+                            level_title: string
+                            membercard_background:
+                              icon_name: string
+                              image_url: string
+                            level_number: 0
+                            consumption_criteria: 0
+                      name: string
+                      app_features:
+                        home_article_categories:
+                          - id: string
+                            title: string
+                        features:
+                          - feature_type: string
+                            feature_name: string
+                            icon:
+                              icon_name: string
+                              image_url: string
+                      social_media: {}
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      x-examples:
+                        example-1:
+                          app_theme:
+                            primary_color: string
+                            home_background_middle_color: string
+                            home_background_bottom_color: string
+                            home_background_top_color: string
+                            home_title_logo:
+                              icon_name: string
+                              image_url: string
+                          bg_code: string
+                          submember_info:
+                            level_rules:
+                              - criteria_description: string
+                                level_benefits:
+                                  - id: string
+                                    title: string
+                                    benefit_icon:
+                                      icon_name: string
+                                      image_url: string
+                                    short_description: string
+                                    issuer_bg_code: string
+                                criteria_short_description: string
+                                membercard_image:
+                                  icon_name: string
+                                  image_url: string
+                                level_title: string
+                                membercard_background:
+                                  icon_name: string
+                                  image_url: string
+                                level_number: 0
+                                consumption_criteria: 0
+                          name: string
+                          app_features:
+                            home_article_categories:
+                              - id: string
+                                title: string
+                            features:
+                              - feature_type: string
+                                feature_name: string
+                                icon:
+                                  icon_name: string
+                                  image_url: string
+                          social_media: {}
+                      examples:
+                        - app_theme:
+                            primary_color: string
+                            home_background_middle_color: string
+                            home_background_bottom_color: string
+                            home_background_top_color: string
+                            home_title_logo:
+                              icon_name: string
+                              image_url: https://sample.com/image.jpg
+                          bg_code: string
+                          submember_info:
+                            level_rules:
+                              - criteria_description: string
+                                level_benefits:
+                                  - id: string
+                                    title: string
+                                    benefit_icon:
+                                      icon_name: string
+                                      image_url: string
+                                    short_description: string
+                                    issuer_bg_code: string
+                                criteria_short_description: string
+                                membercard_image:
+                                  icon_name: string
+                                  image_url: string
+                                level_title: string
+                                membercard_background:
+                                  icon_name: string
+                                  image_url: string
+                                level_number: 0
+                                consumption_criteria: 0
+                          name: string
+                          app_features:
+                            home_article_categories:
+                              - id: string
+                                title: string
+                            features:
+                              - feature_type: string
+                                feature_name: string
+                                icon:
+                                  icon_name: string
+                                  image_url: string
+                          social_media: {}
+                      properties:
+                        app_theme:
+                          type: object
+                          x-examples:
+                            example-1:
+                              primary_color: string
+                              home_background_middle_color: string
+                              home_background_bottom_color: string
+                              home_background_top_color: string
+                              home_title_logo:
+                                icon_name: string
+                                image_url: string
+                          properties:
+                            primary_color:
+                              type: string
+                            home_background_middle_color:
+                              type: string
+                            home_background_bottom_color:
+                              type: string
+                            home_background_top_color:
+                              type: string
+                            home_title_logo:
+                              $ref: "#/components/schemas/AppFeature/properties/icon"
+                          examples:
+                            - primary_color: string
+                              home_background_middle_color: string
+                              home_background_bottom_color: string
+                              home_background_top_color: string
+                              home_title_logo:
+                                icon_name: string
+                                image_url: https://sample.com/image.jpg
+                        bg_code:
+                          type: string
+                        submember_info:
+                          type: object
+                          x-examples:
+                            example-1:
+                              level_rules:
+                                - criteria_description: string
+                                  level_benefits:
+                                    - id: string
+                                      title: string
+                                      benefit_icon:
+                                        icon_name: string
+                                        image_url: string
+                                      short_description: string
+                                      issuer_bg_code: string
+                                  criteria_short_description: string
+                                  membercard_image:
+                                    icon_name: string
+                                    image_url: string
+                                  level_title: string
+                                  membercard_background:
+                                    icon_name: string
+                                    image_url: string
+                                  level_number: 0
+                                  consumption_criteria: 0
+                          properties:
+                            level_rules:
+                              type: array
+                              items:
+                                type: object
+                                x-examples:
+                                  example-1:
+                                    criteria_description: string
+                                    level_benefits:
+                                      - id: string
+                                        title: string
+                                        benefit_icon:
+                                          icon_name: string
+                                          image_url: string
+                                        short_description: string
+                                        issuer_bg_code: string
+                                    criteria_short_description: string
+                                    membercard_image:
+                                      icon_name: string
+                                      image_url: string
+                                    level_title: string
+                                    membercard_background:
+                                      icon_name: string
+                                      image_url: string
+                                    level_number: 0
+                                    consumption_criteria: 0
+                                examples:
+                                  - criteria_description: string
+                                    level_benefits:
+                                      - id: "5"
+                                        title: string
+                                        benefit_icon:
+                                          icon_name: string
+                                          image_url: string
+                                        short_description: string
+                                        issuer_bg_code: noke
+                                    criteria_short_description: string
+                                    membercard_image:
+                                      icon_name: string
+                                      image_url: string
+                                    level_title: string
+                                    membercard_background:
+                                      icon_name: string
+                                      image_url: string
+                                    level_number: 0
+                                    consumption_criteria: 0
+                                properties:
+                                  criteria_description:
+                                    type: string
+                                  level_benefits:
+                                    type: array
+                                    items:
+                                      $ref: "#/paths/~1v1~1submembers/get/responses/200/content/application~1json/sch\
+                                        ema/properties/data/items/properties/le\
+                                        vel/properties/benefits/items"
+                                  criteria_short_description:
+                                    type: string
+                                  membercard_image:
+                                    $ref: "#/components/schemas/AppFeature/properties/icon"
+                                  level_title:
+                                    type: string
+                                  membercard_background:
+                                    $ref: "#/components/schemas/AppFeature/properties/icon"
+                                  level_number:
+                                    type: integer
+                                  consumption_criteria:
+                                    type: integer
+                          examples:
+                            - level_rules:
+                                - criteria_description: string
+                                  level_benefits:
+                                    - id: "5"
+                                      title: string
+                                      benefit_icon:
+                                        icon_name: string
+                                        image_url: string
+                                      short_description: string
+                                      issuer_bg_code: noke
+                                  criteria_short_description: string
+                                  membercard_image:
+                                    icon_name: string
+                                    image_url: string
+                                  level_title: string
+                                  membercard_background:
+                                    icon_name: string
+                                    image_url: string
+                                  level_number: 0
+                                  consumption_criteria: 0
+                        name:
+                          type: string
+                        app_features:
+                          type: object
+                          x-examples:
+                            example-1:
+                              home_article_categories:
+                                - id: string
+                                  title: string
+                              features:
+                                - feature_type: string
+                                  feature_name: string
+                                  icon:
+                                    icon_name: string
+                                    image_url: string
+                          examples:
+                            - home_article_categories:
+                                - id: "5"
+                                  title: 365選品
+                              features:
+                                - feature_type: string
+                                  feature_name: string
+                                  icon:
+                                    icon_name: string
+                                    image_url: https://sample.com/image.jpg
+                          properties:
+                            home_article_categories:
+                              type: array
+                              items:
+                                $ref: "#/components/schemas/AppFeatures/properties/home_article_categories/item\
+                                  s"
+                            features:
+                              type: array
+                              items:
+                                $ref: "#/components/schemas/AppFeatures/properties/features/items"
+                          required:
+                            - home_article_categories
+                            - features
+                        social_media:
+                          type: object
+                required:
+                  - code
+                  - message
+                  - data
+              examples:
+                example-1:
+                  value:
+                    code: string
+                    message: string
+                    data:
+                      - app_theme:
+                          primary_color: string
+                          home_background_middle_color: string
+                          home_background_bottom_color: string
+                          home_background_top_color: string
+                          home_title_logo:
+                            icon_name: string
+                            image_url: https://sample.com/image.jpg
+                        bg_code: string
+                        submember_info:
+                          level_rules:
+                            - criteria_description: string
+                              level_benefits:
+                                - id: string
+                                  title: string
+                                  benefit_icon:
+                                    icon_name: string
+                                    image_url: string
+                                  short_description: string
+                                  issuer_bg_code: string
+                              criteria_short_description: string
+                              membercard_image:
+                                icon_name: string
+                                image_url: string
+                              level_title: string
+                              membercard_background:
+                                icon_name: string
+                                image_url: string
+                              level_number: 0
+                              consumption_criteria: 0
+                        name: string
+                        app_features:
+                          home_article_categories:
+                            - id: string
+                              title: string
+                          features:
+                            - feature_type: string
+                              feature_name: string
+                              icon:
+                                icon_name: string
+                                image_url: string
+                        social_media: {}
+      operationId: get-v1-businesses
+      description: (+BG01) 取得「事業群」list
+  /v1/submembers:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - submembers
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-200:
+                    code: string
+                    message: string
+                    data:
+                      - id: "15"
+                        bg_code: noke
+                        business_name: NOKE 忠泰樂生活
+                        submember_card_number: NOK0012345
+                        accumulated_consumption: 1990
+                        level:
+                          level_number: 1
+                          level_title: 正式會員
+                          consumption_criteria: 50000
+                          next_level_number: 2
+                          next_level_title: VIP 會員
+                          next_level_consumption_criteria: 50000
+                          next_level_criteria_short_description: 累計 $50,000 升等VIP
+                          membercard_background:
+                            icon_name: icon_app_calendar
+                            image_url: https://sample.com/image.jpg
+                          benefits:
+                            - id: "5"
+                              title: 消費累積點數
+                              benefit_icon:
+                                icon_name: icon_name
+                                image_url: https://sample.com/image01.jpg
+                              short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                              issuer_bg_code: noke
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      x-examples:
+                        example-1:
+                          id: string
+                          bg_code: string
+                          business_name: string
+                          submember_card_number: string
+                          accumulated_consumption: 0
+                          level:
+                            next_level_criteria_short_description: string
+                            next_level_consumption_criteria: 0
+                            benefits:
+                              - id: string
+                                title: string
+                                benefit_icon:
+                                  icon_name: string
+                                  image_url: string
+                                short_description: string
+                                issuer_bg_code: string
+                            next_level_number: 0
+                            next_level_title: string
+                            level_title: string
+                            membercard_background:
+                              icon_name: string
+                              image_url: string
+                            level_number: 0
+                      properties:
+                        id:
+                          type: string
+                        bg_code:
+                          type: string
+                        business_name:
+                          type: string
+                        submember_card_number:
+                          type: string
+                        accumulated_consumption:
+                          type: integer
+                        level:
+                          type: object
+                          x-examples:
+                            example-1:
+                              level_number: 1
+                              level_title: 正式會員
+                              consumption_criteria: 50000
+                              next_level_number: 2
+                              next_level_title: VIP 會員
+                              next_level_consumption_criteria: 50000
+                              next_level_criteria_short_description: 累計 $50,000 升等VIP
+                              membercard_background:
+                                image_url: string
+                                icon_name: string
+                              benefits:
+                                - id: string
+                                  title: string
+                                  benefit_icon:
+                                    image_url: string
+                                    icon_name: string
+                                  short_description: string
+                                  issuer_bg_code: string
+                          examples:
+                            - level_number: 1
+                              level_title: 正式會員
+                              consumption_criteria: 50000
+                              next_level_number: 2
+                              next_level_title: VIP 會員
+                              next_level_consumption_criteria: 50000
+                              next_level_criteria_short_description: 累計 $50,000 升等VIP
+                              membercard_background:
+                                icon_name: icon_app_calendar
+                                image_url: https://sample.com/image.jpg
+                              benefits:
+                                - id: "5"
+                                  title: string
+                                  benefit_icon:
+                                    icon_name: string
+                                    image_url: string
+                                  short_description: string
+                                  issuer_bg_code: noke
+                          properties:
+                            level_number:
+                              type: integer
+                            level_title:
+                              type: string
+                            consumption_criteria:
+                              type: integer
+                            next_level_number:
+                              type: integer
+                            next_level_title:
+                              type: string
+                            next_level_consumption_criteria:
+                              type: integer
+                            next_level_criteria_short_description:
+                              type: string
+                            membercard_background:
+                              $ref: "#/components/schemas/AppFeature/properties/icon"
+                            benefits:
+                              type: array
+                              items:
+                                type: object
+                                x-examples:
+                                  example-1:
+                                    id: string
+                                    title: string
+                                    benefit_icon:
+                                      icon_name: string
+                                      image_url: string
+                                    short_description: string
+                                    issuer_bg_code: string
+                                examples:
+                                  - id: "5"
+                                    short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                                    title: 消費累積點數
+                                    benefit_icon:
+                                      icon_name: icon_name
+                                      image_url: https://sample.com/image01.jpg
+                                    issuer_bg_code: noke
+                                properties:
+                                  id:
+                                    type: string
+                                  title:
+                                    type: string
+                                  short_description:
+                                    type: string
+                                  benefit_icon:
+                                    $ref: "#/components/schemas/AppFeature/properties/icon"
+                                  issuer_bg_code:
+                                    type: string
+                      examples:
+                        - id: "15"
+                          bg_code: noke
+                          business_name: NOKE 忠泰樂生活
+                          submember_card_number: NOK0012345
+                          accumulated_consumption: 1990
+                          level:
+                            level_number: 1
+                            level_title: 正式會員
+                            consumption_criteria: 50000
+                            next_level_number: 2
+                            next_level_title: VIP 會員
+                            next_level_consumption_criteria: 50000
+                            next_level_criteria_short_description: 累計 $50,000 升等VIP
+                            membercard_background:
+                              icon_name: icon_app_calendar
+                              image_url: https://sample.com/image.jpg
+                            benefits:
+                              - id: "5"
+                                title: 消費累積點數
+                                benefit_icon:
+                                  icon_name: icon_name
+                                  image_url: https://sample.com/image01.jpg
+                                short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                                issuer_bg_code: noke
+                required:
+                  - code
+                  - message
+                  - data
+              examples:
+                example-200:
+                  value:
+                    code: OK
+                    message: Successful
+                    data:
+                      - id: "15"
+                        bg_code: noke
+                        business_name: NOKE 忠泰樂生活
+                        submember_card_number: NOK0012345
+                        accumulated_consumption: 1990
+                        level:
+                          level_number: 1
+                          level_title: 正式會員
+                          consumption_criteria: 50000
+                          next_level_number: 2
+                          next_level_title: VIP 會員
+                          next_level_consumption_criteria: 50000
+                          next_level_criteria_short_description: 累計 $50,000 升等VIP
+                          membercard_background:
+                            icon_name: icon_app_calendar
+                            image_url: https://sample.com/image.jpg
+                          benefits:
+                            - id: "5"
+                              title: 消費累積點數
+                              benefit_icon:
+                                icon_name: icon_name
+                                image_url: https://sample.com/image01.jpg
+                              short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+                              issuer_bg_code: noke
+      operationId: get-v1-submembers-me
+      description: (SM01) 取得「子事業群會員」資訊
+      security:
+        - Authorization: []
+    parameters: []
+components:
+  schemas:
+    AppFeature:
+      type: object
+      x-examples:
+        example-1:
+          feature_type: string
+          feature_name: string
+          icon:
+            icon_name: string
+            image_url: string
+      properties:
+        feature_type:
+          type: string
+        feature_name:
+          type: string
+        icon:
+          type: object
+          x-examples:
+            example-1:
+              icon_name: string
+              image_url: string
+          properties:
+            icon_name:
+              type: string
+            image_url:
+              type: string
+          required:
+            - image_url
+          examples:
+            - icon_name: icon_app_calendar
+              image_url: https://sample.com/image.jpg
+      required:
+        - feature_type
+        - feature_name
+      examples:
+        - feature_type: string
+          feature_name: string
+          icon:
+            icon_name: string
+            image_url: https://sample.com/image.jpg
+    AppFeatures:
+      type: object
+      x-examples:
+        example-1:
+          home_article_categories:
+            - id: string
+              title: string
+          features:
+            - feature_type: string
+              feature_name: string
+              icon:
+                icon_name: string
+                image_url: string
+      examples:
+        - home_article_categories:
+            - id: "5"
+              title: 365選品
+          features:
+            - feature_type: string
+              feature_name: string
+              icon:
+                icon_name: string
+                image_url: https://sample.com/image.jpg
+      properties:
+        home_article_categories:
+          type: array
+          items:
+            type: object
+            x-examples:
+              example-1:
+                id: "12"
+                title: 365選品
+            properties:
+              id:
+                type: string
+              title:
+                type: string
+            required:
+              - id
+              - title
+            examples:
+              - id: "5"
+                title: 365選品
+        features:
+          type: array
+          items:
+            type: object
+            x-examples:
+              example-1:
+                feature_type: string
+                feature_name: string
+                icon:
+                  icon_name: string
+                  image_url: string
+            properties:
+              feature_type:
+                type: string
+              feature_name:
+                type: string
+              icon:
+                $ref: "#/components/schemas/AppFeature/properties/icon"
+            required:
+              - feature_type
+              - feature_name
+            examples:
+              - feature_type: string
+                feature_name: string
+                icon:
+                  icon_name: string
+                  image_url: https://sample.com/image.jpg
+      required:
+        - home_article_categories
+        - features
+    AppTheme:
+      type: object
+      x-examples:
+        example-1:
+          primary_color: string
+          home_background_middle_color: string
+          home_background_bottom_color: string
+          home_background_top_color: string
+          home_title_logo:
+            icon_name: string
+            image_url: string
+      properties:
+        primary_color:
+          type: string
+        home_background_middle_color:
+          type: string
+        home_background_bottom_color:
+          type: string
+        home_background_top_color:
+          type: string
+        home_title_logo:
+          $ref: "#/components/schemas/AppFeature/properties/icon"
+      examples:
+        - primary_color: string
+          home_background_middle_color: string
+          home_background_bottom_color: string
+          home_background_top_color: string
+          home_title_logo:
+            icon_name: string
+            image_url: https://sample.com/image.jpg
+    ArticleCategory:
+      type: object
+      x-examples:
+        example-1:
+          id: "12"
+          title: 365選品
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+      required:
+        - id
+        - title
+      examples:
+        - id: "5"
+          title: 365選品
+    Benefit:
+      type: object
+      x-examples:
+        example-1:
+          id: string
+          title: string
+          benefit_icon:
+            icon_name: string
+            image_url: string
+          short_description: string
+          issuer_bg_code: string
+      examples:
+        - id: "5"
+          short_description: 單筆消費 100 元，累積 1 點（尚無法折抵）
+          title: 消費累積點數
+          benefit_icon:
+            icon_name: icon_name
+            image_url: https://sample.com/image01.jpg
+          issuer_bg_code: noke
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        short_description:
+          type: string
+        benefit_icon:
+          $ref: "#/components/schemas/AppFeature/properties/icon"
+        issuer_bg_code:
+          type: string
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer
+security:
+  - Authorization: []

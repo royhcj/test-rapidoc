@@ -81,6 +81,10 @@ paths:
                     type: array
                     items:
                       $ref: ./schemas/Business.yaml
+                required:
+                  - code
+                  - message
+                  - data
               examples:
                 example-1:
                   value:
@@ -181,6 +185,10 @@ paths:
                     type: array
                     items:
                       $ref: ./schemas/Submember.yaml
+                required:
+                  - code
+                  - message
+                  - data
               examples:
                 example-200:
                   value:
@@ -217,7 +225,17 @@ paths:
         - Authorization: []
     parameters: []
 components:
-  schemas: {}
+  schemas: 
+    AppFeature:
+      $ref: "schemas/AppFeature.yaml"
+    AppFeatures:
+      $ref: "schemas/AppFeatures.yaml"
+    AppTheme:
+      $ref: "schemas/AppTheme.yaml"
+    ArticleCategory:
+      $ref: "schemas/ArticleCategory.yaml"
+    Benefit:
+      $ref: "schemas/Benefit.yaml"
   securitySchemes:
     Authorization:
       type: http

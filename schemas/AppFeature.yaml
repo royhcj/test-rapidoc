@@ -6,19 +6,23 @@ x-examples:
     icon:
       icon_name: string
       image_url: string
+examples:
+  - feature_type: noke_parking
+    feature_name: 停車服務
+    icon:
+      icon_name: string
+      image_url: 'https://sample.com/image.jpg'
+description: App功能
 properties:
   feature_type:
     type: string
+    description: 功能enum
   feature_name:
     type: string
+    description: 功能名稱
   icon:
     $ref: ./ImageResource.yaml
 required:
   - feature_type
   - feature_name
-examples:
-  - feature_type: string
-    feature_name: string
-    icon:
-      icon_name: string
-      image_url: 'https://sample.com/image.jpg'
+  - icon

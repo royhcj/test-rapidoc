@@ -79,6 +79,7 @@ paths:
                     type: string
                   data:
                     type: array
+                    description: 事業群資訊
                     items:
                       $ref: ./schemas/Business.yaml
                 required:
@@ -225,17 +226,17 @@ paths:
         - Authorization: []
     parameters: []
 components:
-  schemas: 
+  schemas:
     AppFeature:
-      $ref: "schemas/AppFeature.yaml"
+      $ref: schemas/AppFeature.yaml
     AppFeatures:
-      $ref: "schemas/AppFeatures.yaml"
+      $ref: schemas/AppFeatures.yaml
     AppTheme:
-      $ref: "schemas/AppTheme.yaml"
+      $ref: schemas/AppTheme.yaml
     ArticleCategory:
-      $ref: "schemas/ArticleCategory.yaml"
+      $ref: schemas/ArticleCategory.yaml
     Benefit:
-      $ref: "schemas/Benefit.yaml"
+      $ref: schemas/Benefit.yaml
   securitySchemes:
     Authorization:
       type: http

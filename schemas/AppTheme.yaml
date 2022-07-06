@@ -8,6 +8,14 @@ x-examples:
     home_title_logo:
       icon_name: string
       image_url: string
+examples:
+  - primary_color: string
+    home_background_middle_color: string
+    home_background_bottom_color: string
+    home_background_top_color: string
+    home_title_logo:
+      icon_name: string
+      image_url: 'https://sample.com/image.jpg'
 properties:
   primary_color:
     type: string
@@ -19,11 +27,5 @@ properties:
     type: string
   home_title_logo:
     $ref: ./ImageResource.yaml
-examples:
-  - primary_color: string
-    home_background_middle_color: string
-    home_background_bottom_color: string
-    home_background_top_color: string
-    home_title_logo:
-      icon_name: string
-      image_url: 'https://sample.com/image.jpg'
+required:
+  - home_title_logo
